@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="kr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+</head>
+<body>
     <script>
         async function button1_click(){ //async : 비동기
             let user = {
                 name : "abc",
                 surname : "123"
             };
-            fetch('http://localhost:3001/users', {
+            fetch('http://localhost:3000/users', {
                 method : 'POST',
                 headers: {
                     'Content-Type' : 'application/json; charset=utf-8'
@@ -27,8 +29,6 @@
             });
         }
     </script>
-</head>
-<body>
     <button onclick="button1_click()">버튼</button>
 </body>
 </html>
