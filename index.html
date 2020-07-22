@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function button1_click(){ //async : 비동기
+            let user = {
+                name : "abc",
+                surname : "123"
+            };
+            fetch('http://localhost:3001/users', {
+                method : 'POST',
+                headers: {
+                    'Content-Type' : 'application/json; charset=utf-8'
+                },
+                body : JSON.stringify(user)
+            })
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(yeonbeen) {
+                console.log(JSON.stringify(yeonbeen));
+                console.log(yeonbeen.name);
+                console.log(JSON.stringify(yeonbeen.surname));
+            });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="button1_click()">버튼</button>
+</body>
+</html>
